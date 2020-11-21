@@ -1,0 +1,12 @@
+<button (click)="GetTodos()">Get Todos</button>
+<ul>
+  <li *ngFor="let todo of todos">
+    <input type="text" #todoInput value="{{todo.content}}">
+    <button (click)="DeleteTodo(todo.id)">Delete</button>
+    <button (click)="UpdateTodo(todo.id,todoInput.value)">Update</button>
+  </li>
+</ul>
+<input type="text"
+[(ngModel)]="content"
+[ngModelOptions]="{standalone: true}"> 
+<button (click)="PostTodo()">Add Task</button>
